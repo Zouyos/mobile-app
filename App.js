@@ -7,8 +7,8 @@ import ProfileStack from './Components/Stacks/ProfileStack';
 import { UserContext } from './contexts/UserContext';
 
 export default function App() {
-  const fakeUser = { email: 'johndoe@gmail.com', username: 'John' }
-  const [user, setUser] = useState(fakeUser)
+  const fauxUser = { email: 'johndoe@gmail.com', username: 'John' }
+  const [user, setUser] = useState(fauxUser)
   return (
     <UserContext.Provider value={{ user: user, setUser: setUser }}>
       <View style={styles.container}>

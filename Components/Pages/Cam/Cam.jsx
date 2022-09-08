@@ -9,7 +9,6 @@ import { UserContext } from '../../../contexts/UserContext';
 
 const Cam = (props) => {
 
-  console.log(props)
   const {user, setUser} = useContext(UserContext)
   const size = useWindowDimensions()
 
@@ -47,7 +46,9 @@ const Cam = (props) => {
     // const ratios = await cameraRef.current.getSupportedRatiosAsync()
     // console.log(ratios);
     const image = await cameraRef.current.takePictureAsync()
+    // Utiliser le context pour mettre l'image dans user
     setUser({...user, avatar: image.uri})
+    // Utiliser la navigation reçue en props pour revenir au profil
     props.navigation.pop()
   }
 

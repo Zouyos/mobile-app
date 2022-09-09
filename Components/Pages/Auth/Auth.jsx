@@ -14,6 +14,7 @@ export default function Auth() {
 
   return (
     <View>
+      {test}
       <Card title='Bienvenue !' content=
         {isLogin
           ? 'Veuillez-vous authentifier'

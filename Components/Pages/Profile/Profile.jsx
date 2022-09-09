@@ -4,8 +4,9 @@ import { UserContext } from "../../../contexts/UserContext";
 import { globalStyle } from "../../../styles/GlobalStyle";
 import { styles } from "./ProfileStyle";
 import defaultAvatar from "../../../assets/default_avatar.png"
-import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialIcons, Feather } from '@expo/vector-icons';
 import { launchImageLibraryAsync, MediaTypeOptions } from 'expo-image-picker';
+import Button from "../../UI/Button/Button";
 
 const Profile = (props) => {
 
@@ -24,6 +25,10 @@ const Profile = (props) => {
 
   function goCam() {
     props.navigation.push('camera')
+  }
+
+  function editProfile() {
+    props.navigation.push('edit-profile')
   }
 
   return (
@@ -54,9 +59,14 @@ const Profile = (props) => {
         <View style={styles.view}>
           <Text style={styles.title}>Description: </Text>
           <Text style={{ fontSize: globalStyle.fontSize.s }}>
-            {user.description ? user.description : 'Veuillez entrer une description'}
+            {user.description ? user.description : 'Vous n\'avez pas encore de description'}
           </Text>
         </View>
+      </View>
+      <View>
+        <Button action={editProfile} value='Modifier le profil'>
+          <Feather name="edit-2" size={24} color={globalStyle.color.lightColor} />
+        </Button>
       </View>
     </View>
   );

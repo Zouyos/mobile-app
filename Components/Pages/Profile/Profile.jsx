@@ -27,7 +27,7 @@ const Profile = (props) => {
     props.navigation.push('camera')
   }
 
-  function editProfile() {
+  function goEditProfile() {
     props.navigation.push('edit-profile')
   }
 
@@ -64,7 +64,7 @@ const Profile = (props) => {
         </View>
       </View>
       <View>
-        <Button action={editProfile} value='Modifier le profil'>
+        <Button action={goEditProfile} value='Modifier le profil'>
           <Feather name="edit-2" size={24} color={globalStyle.color.lightColor} />
         </Button>
       </View>

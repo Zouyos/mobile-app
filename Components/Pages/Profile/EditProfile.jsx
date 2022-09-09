@@ -20,14 +20,17 @@ export default function EditProfile(props) {
 
   function handleEmail(text) {
     setEmailInput(text)
+    setEmailError('')
   }
 
   function handleUsername(text) {
     setUsernameInput(text)
+    setUsernameError('')
   }
 
   function handleDescrption(text) {
     setDescriptionInput(text)
+    setDescriptionError('')
   }
 
   function editProfile() {
@@ -58,7 +61,7 @@ export default function EditProfile(props) {
           holder='Email'
           valeur={emailInput}
           action={handleEmail}
-          type='default'
+          type='email-adress'
           errorMessage={emailError}
         />
         <InputWithError

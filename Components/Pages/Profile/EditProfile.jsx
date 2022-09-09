@@ -9,13 +9,14 @@ export default function EditProfile(props) {
 
   const { user, setUser } = useContext(UserContext)
 
-  const [emailInput, setEmailInput] = useState('')
+  const [emailInput, setEmailInput] = useState(user.email)
   const [emailError, setEmailError] = useState('')
 
-  const [usernameInput, setUsernameInput] = useState('')
+  const [usernameInput, setUsernameInput] = useState(user.username)
   const [usernameError, setUsernameError] = useState('')
 
-  const [descriptionInput, setDescriptionInput] = useState('')
+  const [descriptionInput, setDescriptionInput] = useState(user.description ?
+    user.description : '')
   const [descriptionError, setDescriptionError] = useState('')
 
   function handleEmail(text) {
@@ -55,7 +56,7 @@ export default function EditProfile(props) {
   }
   return (
     <View>
-      <Text style={[styles.title, {textAlign: 'center', marginVertical: 10}]}>Modifier votre profil</Text>
+      <Text style={[styles.title, { textAlign: 'center', marginVertical: 10 }]}>Modifier votre profil</Text>
       <View style={styles.container}>
         <InputWithError
           holder='Email'

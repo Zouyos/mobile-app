@@ -9,12 +9,16 @@ export default function ProfileStack() {
   return (
     <Stack.Navigator screenOptions={{
       headerStyle: { backgroundColor: globalStyle.color.primaryColor },
-      headerTitleStyle: { color: globalStyle.color.lightColor }
+      headerTitleStyle: { color: globalStyle.color.lightColor },
+      headerTintColor: globalStyle.color.lightColor
     }}>
       <Stack.Screen
         name='profile'
         component={Profile}
-        options={{ title: 'Profil' }}
+        options={{
+          title: 'Profil',
+          headerShown: false
+        }}
       />
       <Stack.Screen
         name='edit-profile'

@@ -5,6 +5,7 @@ import Button from "../UI/Button/Button";
 import { EvilIcons } from '@expo/vector-icons';
 import { globalStyle } from "../../styles/GlobalStyle";
 import { UserContext } from "../../contexts/UserContext";
+import { signupUser } from "../../libs/request/auth";
 
 export default function Signup() {
 
@@ -52,7 +53,7 @@ export default function Signup() {
     setPwdConfirmError('')
   }
 
-  function signup() {
+  async function signup() {
     if (emailInput.includes('@')
       && usernameInput.length >= 3
       && usernameInput.length <= 12
@@ -61,7 +62,10 @@ export default function Signup() {
       // Envoi des données à la backend
       // Recu JWT token
       // Decode JWT: {uid:xxxx, email:xxxx@xxx.com, username:xxxx, avatar:xxxx.png}
-      userContext.setUser({ email: emailInput, username: usernameInput })
+
+      const signedUpUser = await signupUser(emailInput, usernameInput, passwordInput)
+
+      // userContext.setUser(signedUpUser)
     } else {
       setEmailError(!emailInput.includes('@') && 'Email incorrect')
       setUsernameError((usernameInput.length < 3 || usernameInput.length > 12) && 'Votre pseudo doit contenir entre 3 et 12 ctrs')

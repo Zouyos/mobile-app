@@ -10,7 +10,7 @@ export default function InputWithError(
     action,
     isPassword,
     type,
-    errorMessage
+    errorMessage,
   }) {
   const [isPasswordHidden, setIsPasswordHidden] = useState(true)
   function togglePassword() {
@@ -43,7 +43,6 @@ export default function InputWithError(
               style={styles.icon}
             />
           )}
-          {/* Autre manière de faire un opérateur ternaire */}
         </TouchableOpacity>
       </View>
       <Text style={styles.error}>{errorMessage}</Text>
@@ -75,7 +74,7 @@ const styles = StyleSheet.create({
   },
   input: {
     border: 'none',
-    width: '90%'
+    width: '90%',
   },
   error: {
     color: 'red',
@@ -83,6 +82,10 @@ const styles = StyleSheet.create({
   },
   icon: {
     width: '10%'
+  },
+  placeholder: {
+    fontStyle: 'italic',
+    color: 'lightgrey'
   }
 })
 

@@ -1,5 +1,4 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { StyleSheet } from "react-native";
 import Navbar from "../Containers/Navbar/Navbar";
 import GOT from "../Pages/GOT/GOT";
 import ProfileStack from "../Stacks/ProfileStack";
@@ -16,17 +15,17 @@ export default function GlobalDrawer() {
       }}
     >
       <Drawer.Screen
-        name='GOT'
-        component={GOT}
-        options={{
-          title: 'Personnages de Game of Thrones'
-        }}
-      />
-      <Drawer.Screen
         name='profilestack'
         component={ProfileStack}
         options={{
           title: 'Profil'
+        }}
+      />
+      <Drawer.Screen
+        name='GOT'
+        component={GOT}
+        options={{
+          title: 'Personnages de Game of Thrones'
         }}
       />
     </Drawer.Navigator>

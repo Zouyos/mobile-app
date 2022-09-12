@@ -57,7 +57,7 @@ const Profile = (props) => {
           <Text style={{ fontSize: globalStyle.fontSize.s }}>{user.username}</Text>
         </View>
         <View style={styles.view}>
-          <Text style={styles.title}>Description: </Text>
+          <Text style={styles.title}>Description:</Text>
           <Text style={{ fontSize: globalStyle.fontSize.s }}>
             {user.description ? user.description : 'Vous n\'avez pas encore de description'}
           </Text>

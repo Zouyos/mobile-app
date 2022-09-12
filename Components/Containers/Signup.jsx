@@ -63,7 +63,7 @@ export default function Signup() {
       // Recu JWT token
       // Decode JWT: {uid:xxxx, email:xxxx@xxx.com, username:xxxx, avatar:xxxx.png}
 
-      const signedUpUser = await signupUser(emailInput, usernameInput, passwordInput)
+      await signupUser(emailInput, usernameInput, passwordInput)
 
       // userContext.setUser(signedUpUser)
     } else {

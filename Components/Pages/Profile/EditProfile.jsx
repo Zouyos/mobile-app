@@ -4,10 +4,12 @@ import { UserContext } from "../../../contexts/UserContext";
 import Button from "../../UI/Button/Button";
 import InputWithError from "../../UI/Inputs/InputWithError";
 import { styles } from "./ProfileStyle";
+import { doc, updateDoc } from "firebase/firestore";
 
 export default function EditProfile(props) {
 
   const { user, setUser } = useContext(UserContext)
+  const washingtonRef = doc(db, "users", user);
 
   const [emailInput, setEmailInput] = useState(user.email)
   const [emailError, setEmailError] = useState('')
